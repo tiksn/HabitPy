@@ -7,6 +7,12 @@ urgentTagId = conf.get("Urgent")
 lessImportantTagId = conf.get("LessImportant")
 lessUrgentTagId = conf.get("LessUrgent")
 
+def printTodo(todo, isImportant, isUrgent, isLessImportant, isLessUrgent):
+    print("To-Do: " + todo["text"])
+    print("\t" + todo["notes"])
+    if todo["notes"] != "":
+        print()
+
 def processToDos(selector, processor):
     todos = api.tasks.user.get(type = "todos")
     for todo in todos:
